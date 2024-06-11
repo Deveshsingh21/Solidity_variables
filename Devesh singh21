@@ -1,0 +1,41 @@
+pragma solidity = 0.8.7;
+
+contract Storage {
+
+   uint number;
+   string private text;
+   bool private flag;
+   address private addr;
+
+    // takes a value _number and assigns it to the state variable number
+    function setNumber(uint _number) public {
+          number = _number;
+    }
+
+    // returns the value of the state variable number
+    function getNumber() public view returns (uint) {
+        return number;
+    }
+
+    function setText(string memory _text)public{
+        text = _text;
+    }
+    function getText()public view returns (string memory){
+        return text;
+    }
+    function setBool(bool _flag)public{
+        flag=_flag;
+    }
+    function getBool()public view returns(bool){
+        return flag;
+
+    }
+    function setAddress(address _addr)public{
+        addr = _addr;
+
+    }
+    function getAddress()public view returns(address){
+        return addr;
+    }
+
+}
