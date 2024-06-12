@@ -1,41 +1,29 @@
-pragma solidity = 0.8.7;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-contract Storage {
-
-   uint number;
-   string private text;
-   bool private flag;
-   address private addr;
-
-    // takes a value _number and assigns it to the state variable number
-    function setNumber(uint _number) public {
-          number = _number;
+contract Calculator {
+    
+    // Function to add two numbers
+    function add(uint a, uint b) public pure returns (uint) {
+        return a + b;
     }
 
-    // returns the value of the state variable number
-    function getNumber() public view returns (uint) {
-        return number;
+    // Function to subtract one number from another
+    function subtract(uint a, uint b) public pure returns (uint) {
+        require(b <= a, "Subtraction would result in a negative value");
+        return a - b;
     }
 
-    function setText(string memory _text)public{
-        text = _text;
-    }
-    function getText()public view returns (string memory){
-        return text;
-    }
-    function setBool(bool _flag)public{
-        flag=_flag;
-    }
-    function getBool()public view returns(bool){
-        return flag;
-
-    }
-    function setAddress(address _addr)public{
-        addr = _addr;
-
-    }
-    function getAddress()public view returns(address){
-        return addr;
+    // Function to multiply two numbers
+    function multiply(uint a, uint b) public pure returns (uint) {
+        return a * b;
     }
 
+    // Function to divide one number by another
+    function divide(uint a, uint b) public pure returns (uint) {
+        require(b > 0, "Cannot divide by zero");
+        return a / b;
+    }
 }
+
+
